@@ -15,9 +15,9 @@ const ADDRESS_VERSION: u8 = 1;
 const ADDRESS_LENGTH: usize = 26;
 
 /// MAINNET chainID
-pub const MAINNET: u8 = 'W' as u8;
+pub const MAINNET: u8 = 'G' as u8;
 /// TESTNET chainID
-pub const TESTNET: u8 = 'T' as u8;
+pub const TESTNET: u8 = 'E' as u8;
 /// STAGENET chainID
 pub const STAGENET: u8 = 'S' as u8;
 
@@ -71,7 +71,7 @@ impl PublicKeyAccount {
 /// transactions.
 /// # Usage
 /// ```
-/// use wavesplatform::account::{PrivateKeyAccount, TESTNET};
+/// use gemblockchain::account::{PrivateKeyAccount, TESTNET};
 /// let account = PrivateKeyAccount::from_seed("seed");
 /// println!("my address: {}", account.public_key().to_address(TESTNET).to_string());
 /// ```

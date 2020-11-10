@@ -127,8 +127,8 @@ pub enum TransactionData<'a> {
 /// Transaction data. Data specific to a particular transaction type are stored in the `data` field.
 /// # Usage
 /// ```
-/// use wavesplatform::account::{PrivateKeyAccount, TESTNET};
-/// use wavesplatform::transaction::*;
+/// use gemblockchain::account::{PrivateKeyAccount, TESTNET};
+/// use gemblockchain::transaction::*;
 /// let account = PrivateKeyAccount::from_seed("seed");
 /// let tx = Transaction::new_alias(&account.public_key(), "rhino", TESTNET, 100000, 1536000000000);
 /// let signed_tx = account.sign_transaction(tx);

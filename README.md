@@ -1,17 +1,17 @@
-# waves-lib-rust
+# gem-lib-rust
 
-![crates.io](https://img.shields.io/crates/v/wavesplatform.svg)
-![docs.rs](https://docs.rs/wavesplatform/badge.svg)
+![crates.io](https://img.shields.io/crates/v/gemblockchain.svg)
+![docs.rs](https://docs.rs/gemblockchain/badge.svg)
 
-Library to work with [Waves blockchain](https://wavesplatform.com)
+Library to work with [Gem blockchain](https://github.com/gemblockchain)
 
 # Usage
 ```rust
 use base58::*;
 use std::time::{SystemTime, UNIX_EPOCH};
-use wavesplatform::account::{PrivateKeyAccount, TESTNET};
-use wavesplatform::seed::*;
-use wavesplatform::transaction::*;
+use gemblockchain::account::{PrivateKeyAccount, TESTNET};
+use gemblockchain::seed::*;
+use gemblockchain::transaction::*;
 
 fn main() {
     let phrase = generate_phrase();

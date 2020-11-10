@@ -1,6 +1,6 @@
-//! wavesplatform
+//! gemblockchain
 //!
-//! Library to work with Waves blockchain (https://wavesplatform.com)
+//! Library to work with Gem blockchain (https://github.com/gemblockchain)
 //!
 mod bytebuffer;
 
