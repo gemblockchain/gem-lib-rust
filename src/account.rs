@@ -19,7 +19,7 @@ pub const MAINNET: u8 = 'G' as u8;
 /// TESTNET chainID
 pub const TESTNET: u8 = 'E' as u8;
 /// STAGENET chainID
-pub const STAGENET: u8 = 'S' as u8;
+pub const STAGENET: u8 = 'M' as u8;
 
 /// An account possessing a address.
 pub struct Address([u8; ADDRESS_LENGTH]);
@@ -216,7 +216,7 @@ mod tests {
         );
         assert_eq!(
             acc.to_address(TESTNET).0,
-            "3MzGEv9wnaqrYFYujAXSH5RQfHaVKNQvx3D"
+            "3FxCC9XUTw8uPz3pRoESVoYKrr1dAm91cQW"
                 .from_base58()
                 .unwrap()
                 .as_slice()
@@ -239,7 +239,7 @@ mod tests {
 
         assert_eq!(
             account.public_key().to_address(TESTNET).to_string(),
-            "3MzGEv9wnaqrYFYujAXSH5RQfHaVKNQvx3D"
+            "3FxCC9XUTw8uPz3pRoESVoYKrr1dAm91cQW"
         );
     }
 }

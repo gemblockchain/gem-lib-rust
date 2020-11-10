@@ -587,7 +587,7 @@ mod tests {
         let pk = PublicKeyAccount([1u8; 32]);
         let asset = Asset::new([2u8; 32]);
         let lease = TransactionId::new([3u8; 32]);
-        let recipient = Address::from_string("3MzGEv9wnaqrYFYujAXSH5RQfHaVKNQvx3D");
+        let recipient = Address::from_string("3FxCC9XUTw8uPz3pRoESVoYKrr1dAm91cQW");
         let fee = 100000;
         let ts: u64 = 1536000000000;
 
@@ -599,7 +599,7 @@ mod tests {
             &Transaction::new_issue(
                 &pk, "coin", "coin", 100000000, 8, false, TESTNET, 100000, ts, None,
             ),
-            "GHqHz8xot1Yo7fivjPBYiqgtJNW3jR6bvpNh2WH66tEM",
+            "CxWkcyGzXkg5gSg82TE8ZN9rTgvS5MXEC2rfScaFYWxM",
         );
         check_hash(
             &Transaction::new_transfer(
@@ -612,26 +612,26 @@ mod tests {
                 Some("atta ch me"),
                 ts,
             ),
-            "E4Jc1vMh4TqryNzajU7onTHLLFkDmjNzo7aSedX4Rpad",
+            "2wvaucypCa8srCkE8YthnbpjxME5ESCuuRQ9gG1KakSE",
         );
         check_hash(
             &Transaction::new_reissue(&pk, &asset, 100000000, false, TESTNET, fee, ts),
-            "83WaG6AAzxF3NFormpqrJr9Bi8eSdwyp3DEB67N7avvM",
+            "AKMCUXqVf3JAFrqUxCDM7Cr4mT79yUExod5s2QqF8Lex",
         );
         check_hash(
             &Transaction::new_burn(&pk, &asset, 100000000, TESTNET, fee, ts),
-            "CfsAEtEAwe4NFKjezeCssaUPevTX56rBsuMeMKRERd6Y",
+            "7f12WJ3Wh1zyTotFai4nAR7grBRaPRbtVmzucZQ3f6Pp",
         );
         check_hash(
             &Transaction::new_lease(&pk, &recipient, 10, TESTNET, fee, ts),
-            "HHs5qfpDN88WTGszpfjVedhMPHeHynDtWPobm2rkpfH4",
+            "7F2uuvovh3JEsijEhvBmTzQXByNfiuTEWLfM1ix2RWL7",
         );
         check_hash(
             &Transaction::new_lease_cancel(&pk, &lease, TESTNET, fee, ts),
-            "9BQLzTCHi9H9jqKeC5rvN7x9m8xfHQh1iApqmAPFTFEU",
+            "2gWuhrJyzrWLPddFzxKFeNsfw4pHzALvcKys72xbDzZd",
         );
         let alias = Transaction::new_alias(&pk, "lilias", TESTNET, fee, ts);
-        check_hash(&alias, "GPyHWQSCT6znfZmjfZfsS6TXPV3zueVZKFUWG7duku1Z");
+        check_hash(&alias, "ZN1NfCHHDbhpceMvRLC6doL4j485MR9cfb4UUx7Hg1g");
 
         let transfers = vec![(&recipient, 10), (&recipient, 10)];
         check_hash(
@@ -643,7 +643,7 @@ mod tests {
                 fee,
                 ts,
             ),
-            "HwWmpBbbYPShKsFAgVA3eH86LkrZgX1xYSoH5YarnwPE",
+            "8JWPQQJMV6DuySUZwDwY5oSwn69fmEneh9ccBwnB3iau",
         );
 
         let arr = vec![4u8; 32];
@@ -662,11 +662,11 @@ mod tests {
         let script = vec![1, 6, 183, 111, 203, 71];
         check_hash(
             &Transaction::new_script(&pk, Some(script.as_slice()), TESTNET, fee, ts),
-            "HASXvcgoikizpWnCLd2cXNeCN5DxdKojCfcn8f7T3KjK",
+            "GgJPg4egXW6Dz7EdvuQL4kE2WiZgHLb2tSGmzjfB2yuv",
         );
         check_hash(
             &Transaction::new_script(&pk, None, TESTNET, fee, ts),
-            "1gwS1qkKKShwk5scB7M7N9t6L3eX2Hpkp9hF5RG8HJD",
+            "H7ziWC7zXBmR4p9TUbKWSzrbQfVEV1pbmj1FoiQjw7i2",
         );
         check_hash(
             &Transaction::new_sponsor(&pk, &asset, Some(100), fee, ts),
@@ -674,14 +674,14 @@ mod tests {
         );
         check_hash(
             &Transaction::new_set_asset_script(&pk, &asset, None, TESTNET, fee, ts),
-            "FiZJwFqVbYiYeRN1oADFuqCmKHQJpDJonD5a9ekqXFuY",
+            "YQCdnAXSkmbPJUn7TccwuT7wbZADw688XV387z5UMNL",
         );
     }
 
     #[test]
     fn test_sign() {
         let sender = PrivateKeyAccount::from_seed("test");
-        let recipient = Address::from_string("3MzGEv9wnaqrYFYujAXSH5RQfHaVKNQvx3D");
+        let recipient = Address::from_string("3FxCC9XUTw8uPz3pRoESVoYKrr1dAm91cQW");
         let tx = Transaction::new_lease(&sender.1, &recipient, 100000, 84, 100000, 1500000000000);
 
         let ProvenTransaction { tx, proofs } = sender.sign_transaction(tx);
